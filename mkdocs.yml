@@ -116,3 +116,7 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra:
+  # 「サイト運営者について」は tomo のサイトトップ（hotline と同じ。フッターのリンク先）
+  about_url: https://minnanosaiban.github.io/tomo/
