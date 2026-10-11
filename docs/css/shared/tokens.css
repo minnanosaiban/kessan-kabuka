@@ -59,6 +59,9 @@
   --md-card-border-soft: rgba(0, 0, 0, 0.16);
   --md-warn-red: #C70025;                      /* 警告赤 */
   --muted: #5f6b76;                            /* 補足の文字 */
+  --surface: #ffffff;                         /* 図・カードなど、ページ背景より一段手前の面 */
+  --line: #d5d9de;                            /* 細い区切り線（表の横罫・図の枠） */
+  --line-strong: #aab0b8;                     /* 少し濃い線（左罫・図の辺） */
 }
 
 [data-md-color-scheme="slate"] {
@@ -78,6 +81,9 @@
   --md-card-border-soft: rgba(255, 255, 255, 0.20);
   --md-warn-red: #f2545b;
   --muted: #9aa4ae;
+  --surface: hsla(225, 15%, 15%, 1);
+  --line: rgba(255, 255, 255, 0.16);
+  --line-strong: rgba(255, 255, 255, 0.32);
 }
 
 /* ダーク：ヘッダー・タブ背景を統一 */
