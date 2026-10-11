@@ -4,6 +4,8 @@ description: ENEOS株主が、無料で手に入る株価・決算短信・有�
 url: https://minnanosaiban.github.io/kessan-kabuka/
 image: https://minnanosaiban.github.io/kessan-kabuka/img/card1.png
 twitter_card: summary
+hide:
+  - navigation
 ---
 
 <style>.md-typeset h1 { display: none !important; }</style>

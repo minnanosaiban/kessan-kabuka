@@ -8,28 +8,29 @@ site_dir: site
 
 nav:
   - 概要: index.md
-  - <i class="fa-solid fa-layer-group"></i> 無料データを取得編:
-      - 1-1 まず、「株価」を取得する: posts/01-01_get_stock_prices.md
-      - 1-2 決算データを無料で集める: posts/01-02_collect_other_data.md
-      - 1-3 決算ＸＢＲＬをＪＳＯＮに変換: posts/01-03_xbrl_to_json.md
-      - 番外編 データ取得を「押すだけ」にする: posts/EX-03_data_hub.md
-  - <i class="fa-solid fa-layer-group"></i> 決算データで分析編:
-      - 2-1 4象限でＧＡＲＰを見る: posts/02-01_garp_peg_roe.md
-      - 2-2 マルチファクタースコア: posts/02-02_multifactor_scoreboard.md
-      - 2-3 アクルーアル分析: posts/02-03_accrual_analysis.md
-      - 2-4 コンセンサス予想を検証: posts/02-04_triangulation.md
-      - 2-5 セグメント分析 : posts/02-05_segment_analysis.md
-      - 2-6 コングロマリット・ディスカウント: posts/02-06_segment_core_stocks.md
-      - 2-7 ＣＡＲで見る「決算の効き」 : posts/02-07_narrative_car.md
-      - 2-8 ＥＶで見る「会社の値段」 : posts/02-08_enterprise_value.md
-  - <i class="fa-solid fa-layer-group"></i> 機械学習チャレンジ編:
-      - 3-1 コサイン類似度: posts/03-01_similar_earnings_search.md
-      - 3-2 K-NN 分類: posts/03-02_knn_prediction.md
-      - 3-3 K-means クラスタリング: posts/03-03_earnings_clustering.md
-      - 3-4 ランダムフォレスト: posts/03-04_random_forest.md
-      - 3-5 階層型クラスタリング: posts/03-05_price_clustering.md
-      - 3-6 ＰＣＡ異常検知: posts/03-06_price_anomaly.md
-  - <i class="fa-solid fa-layer-group"></i> 用語集: glossary.md
+  - 記事:
+    - 無料データを取得編:
+        - 1-1 まず、「株価」を取得する: posts/01-01_get_stock_prices.md
+        - 1-2 決算データを無料で集める: posts/01-02_collect_other_data.md
+        - 1-3 決算ＸＢＲＬをＪＳＯＮに変換: posts/01-03_xbrl_to_json.md
+        - 番外編 データ取得を「押すだけ」にする: posts/EX-03_data_hub.md
+    - 決算データで分析編:
+        - 2-1 4象限でＧＡＲＰを見る: posts/02-01_garp_peg_roe.md
+        - 2-2 マルチファクタースコア: posts/02-02_multifactor_scoreboard.md
+        - 2-3 アクルーアル分析: posts/02-03_accrual_analysis.md
+        - 2-4 コンセンサス予想を検証: posts/02-04_triangulation.md
+        - 2-5 セグメント分析 : posts/02-05_segment_analysis.md
+        - 2-6 コングロマリット・ディスカウント: posts/02-06_segment_core_stocks.md
+        - 2-7 ＣＡＲで見る「決算の効き」 : posts/02-07_narrative_car.md
+        - 2-8 ＥＶで見る「会社の値段」 : posts/02-08_enterprise_value.md
+    - 機械学習チャレンジ編:
+        - 3-1 コサイン類似度: posts/03-01_similar_earnings_search.md
+        - 3-2 K-NN 分類: posts/03-02_knn_prediction.md
+        - 3-3 K-means クラスタリング: posts/03-03_earnings_clustering.md
+        - 3-4 ランダムフォレスト: posts/03-04_random_forest.md
+        - 3-5 階層型クラスタリング: posts/03-05_price_clustering.md
+        - 3-6 ＰＣＡ異常検知: posts/03-06_price_anomaly.md
+  - 用語集: glossary.md
 
 # 整理中のため公開対象外（整理後に nav と index へ再追加する）
 exclude_docs: |
@@ -41,12 +42,14 @@ extra_css:
   - css/shared/base.css
   - css/shared/layout.css
   - css/shared/components.css
+  - css/shared/tabs.css
   - css/blog.css
   - https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap
   - https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
 
 extra_javascript:
+  - js/tabs.js # タブのドロップダウン（他を閉じる／外側クリックで閉じる）の補助
   - js/lightbox.js # 図のクリック拡大（旧 glightbox の代わり。Zensical はプラグインを使えない）
 
 theme:
@@ -76,6 +79,8 @@ theme:
     - content.code.select
     - content.footnote.tooltips
     - content.tooltips
+    - navigation.tabs # ヘッダーにタブを出す
+    - navigation.tabs.sticky # スクロールしてもタブを固定
     - navigation.expand
     - navigation.indexes
     - navigation.sections
