@@ -4,8 +4,6 @@ description: 「株価分析」に登場する財務・会計・機械学習・�
 url: https://minnanosaiban.github.io/kessan-kabuka/glossary/
 image: https://minnanosaiban.github.io/kessan-kabuka/img/card1.png
 twitter_card: summary
-hide:
-  - navigation
 ---
 
 # 用語集
