@@ -180,6 +180,15 @@ twitter_card: summary
 </a>
 </div>
 
+<p class="toc-phase-label"><i class="fa-solid fa-layer-group"></i> このサイトの作り方</p>
+<div class="toc-grid">
+<a href="../tech/kessan-kabuka/" class="toc-card">
+<span class="toc-card-num">解説</span>
+<span class="toc-card-title">図・コード・記事のつなぎ方</span>
+<span class="toc-card-desc">図の文字サイズのそろえ方・データ時点の固定・公開の仕組み</span>
+</a>
+</div>
+
 <div class="md-footer-note" style="margin-top: 3rem;">
   <div class="md-footer-note__section">
     <p class="md-footer-note__heading">データの取り扱いについて</p>
