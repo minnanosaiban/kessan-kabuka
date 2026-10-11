@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{#- <title>。front matter の seo_title があればそれだけを使う（検索結果に出るタイトル）。
+    無いページは「ページ名 - サイト名」。title: はヘッダー表示や og:title に使う。
+    （tomo・hotline の overrides/main.html と同じ仕組み。Zensical は hooks を使えないので、
+    記事ページ専用の body クラスは使わず、記事サイト全体に css/blog.css を当てている） -#}
+{% block htmltitle %}
+  {% if page and page.meta and page.meta.seo_title %}
+    <title>{{ page.meta.seo_title }}</title>
+  {% elif page and page.meta and page.meta.title %}
+    <title>{{ page.meta.title }} - {{ config.site_name }}</title>
+  {% elif page and page.title and not page.is_homepage %}
+    <title>{{ page.title | striptags }} - {{ config.site_name }}</title>
+  {% else %}
+    <title>{{ config.site_name }}</title>
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  <meta name="msvalidate.01" content="9593088485776550C2589B62968B9D78">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  {% if page and page.meta %}
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="{{ page.meta.twitter_card | default('summary') }}">
+    <meta name="twitter:title" content="{{ page.meta.title | default(page.title | striptags) }}">
+    <meta name="twitter:description" content="{{ page.meta.description }}">
+    <meta name="twitter:image" content="{{ (page.meta.image | default('https://example.com/default.jpg')) | url }}">
+    <meta property="og:title" content="{{ page.meta.title | default(page.title | striptags) }}">
+    <meta property="og:description" content="{{ page.meta.description }}">
+    <meta property="og:image" content="{{ (page.meta.image | default('https://example.com/default.jpg')) | url }}">
+    <meta property="og:url" content="{{ page.meta.url | default(site_url | default('https://example.com')) }}">
+  {% endif %}
+{% endblock %}

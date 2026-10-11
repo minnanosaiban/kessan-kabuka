@@ -1,0 +1,13 @@
+<div class="md-footer-cards">
+  <p class="footer-intro">本ウェブサイトは、個人が学習目的で作成しています。投資勧誘を目的としたものではありません。</p>
+</div>
+<div class="md-copyright">
+    {% if config.copyright %}
+      <div class="md-copyright__highlight">
+        {{ config.copyright }}
+      </div>
+    {% endif %}
+    {% if not config.extra.generator == false %}
+     <p style="margin-top: 1.2rem !important; margin-bottom: 0.1rem !important;">※本ウェブサイトに関する意見・質問は、<a href="https://x.com/minnanosaiban"><i class="fa-brands fa-x-twitter"></i>（<u>@minnanosaiban</u>）</a>までお願いいたします。</p>
+    {% endif %}
+</div>

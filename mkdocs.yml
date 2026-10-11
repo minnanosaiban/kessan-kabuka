@@ -1,0 +1,119 @@
+site_name: 決算・株価データ検証
+site_description: ENEOS株主が、無料で手に入る株価・決算短信・有価証券報告書をもとに元売株・資源株を分析する記事です。決算XBRL、マルチファクター、CAR、機械学習による検証を、Pythonコードとともに公開しています。
+site_url: https://minnanosaiban.github.io/kessan-kabuka/
+site_dir: site
+
+# Zensical でビルドする（hotline と同じ。MkDocs + Material でもビルドできる）
+# 共通デザインは css/shared/（minna-design から sync.bat で同期。直接編集しない）
+
+nav:
+  - 概要: index.md
+  - <i class="fa-solid fa-layer-group"></i> 無料データを取得編:
+      - 1-1 まず、「株価」を取得する: posts/01-01_get_stock_prices.md
+      - 1-2 決算データを無料で集める: posts/01-02_collect_other_data.md
+      - 1-3 決算 XBRL を JSON に変換: posts/01-03_xbrl_to_json.md
+      - 番外編 データ取得を「押すだけ」にする: posts/EX-03_data_hub.md
+  - <i class="fa-solid fa-layer-group"></i> 決算データで分析編:
+      - 2-1 4象限で GARP を見る: posts/02-01_garp_peg_roe.md
+      - 2-2 マルチファクタースコア: posts/02-02_multifactor_scoreboard.md
+      - 2-3 アクルーアル分析: posts/02-03_accrual_analysis.md
+      - 2-4 コンセンサス予想を検証: posts/02-04_triangulation.md
+      - 2-5 セグメント分析 : posts/02-05_segment_analysis.md
+      - 2-6 コングロマリット・ディスカウント: posts/02-06_segment_core_stocks.md
+      - 2-7 CARで見る「決算の効き」 : posts/02-07_narrative_car.md
+      - 2-8 EVで見る「会社の値段」 : posts/02-08_enterprise_value.md
+  - <i class="fa-solid fa-layer-group"></i> 機械学習チャレンジ編:
+      - 3-1 コサイン類似度: posts/03-01_similar_earnings_search.md
+      - 3-2 K-NN 分類: posts/03-02_knn_prediction.md
+      - 3-3 K-means クラスタリング: posts/03-03_earnings_clustering.md
+      - 3-4 ランダムフォレスト: posts/03-04_random_forest.md
+      - 3-5 階層型クラスタリング: posts/03-05_price_clustering.md
+      - 3-6 PCA 異常検知: posts/03-06_price_anomaly.md
+  - <i class="fa-solid fa-layer-group"></i> 用語集: glossary.md
+
+# 整理中のため公開対象外（整理後に nav と index へ再追加する）
+exclude_docs: |
+  posts/EX-01_intraday_stats.md
+  posts/EX-02_intraday_ml.md
+
+extra_css:
+  - css/shared/tokens.css
+  - css/shared/base.css
+  - css/layout.css
+  - css/blog.css
+  - css/components.css
+  - https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap
+  - https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+
+extra_javascript:
+  - js/lightbox.js # 図のクリック拡大（旧 glightbox の代わり。Zensical はプラグインを使えない）
+
+theme:
+  name: "material"
+  variant: classic # Zensical で Material 風の見た目にする指定（MkDocs では無視される）
+  language: ja
+  custom_dir: overrides
+  logo: img/card1.png
+  favicon: img/favicon.png
+
+  palette:
+    - scheme: default
+      primary: white
+      accent: indigo
+      toggle:
+        icon: bootstrap/brightness-high
+        name: ダークモードに切り替えます
+    - scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: bootstrap/moon-stars-fill
+        name: ライトモードに切り替えます
+
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.footnote.tooltips
+    - content.tooltips
+    - navigation.expand
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+
+plugins: [] # プラグインは使わない（MkDocs は書かないと search が自動で有効になるため空を明示。Zensical は無視する）
+
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: info
+  links:
+    not_found: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+markdown_extensions:
+  - meta
+  - md_in_html
+  - attr_list
+  - nl2br
+  - sane_lists
+  - footnotes
+  - toc:
+      toc_depth: 4
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.smartsymbols
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.mark
+  - pymdownx.betterem:
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

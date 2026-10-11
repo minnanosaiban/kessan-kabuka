@@ -1,0 +1,199 @@
+---
+title: 株価分析 ― 無料データで読み解く決算・XBRL・機械学習
+description: ENEOS株主が、無料で手に入る株価・決算短信・有価証券報告書をもとに元売株・資源株を分析します。チャートとアプリのPythonコードはGitHubで公開しています。
+url: https://minnanosaiban.github.io/kessan-kabuka/
+image: https://minnanosaiban.github.io/kessan-kabuka/img/card1.png
+twitter_card: summary
+---
+
+<style>.md-typeset h1 { display: none !important; }</style>
+
+<p>
+  <a href="https://twitter.com/share?url=https://minnanosaiban.github.io/kessan-kabuka/ &text=決算・株価データ検証"
+     target="_blank" class="x-share">
+    <i class="fa-brands fa-x-twitter"></i> でシェア
+  </a>
+</p>
+
+<p class="blog-main-title">決算・株価データ検証</p>
+
+<p>
+無料で手に入る株価・決算短信・有価証券報告書をもとに、主に元売株・資源株を分析しています。これらの記事のチャートやアプリの Python コードは GitHub に公開しています。
+</p>
+
+## 関連サイト：有報ナビ
+
+記事で扱う有価証券報告書のデータを、ブラウザで**探して・比べられる**サイトを公開しています。ＥＮＥＯＳ以外の会社も、業種や財務指標の条件で絞り込んで見られます。
+
+<div class="toc-grid" style="margin-top: 0.8rem;">
+<a href="https://minnanosaiban.github.io/company-analysis/" class="toc-card" target="_blank" rel="noopener">
+<span class="toc-card-num">公開サイト</span>
+<span class="toc-card-title">有報ナビ</span>
+<span class="toc-card-desc">約500社の有報を、探して・比べる</span>
+</a>
+<a href="../tech/stock-analysis/" class="toc-card">
+<span class="toc-card-num">解説</span>
+<span class="toc-card-title">使い方と仕組み</span>
+<span class="toc-card-desc">条件の URL 共有・規約・作るうえでの判断</span>
+</a>
+</div>
+
+## おすすめの読み順
+
+<div class="toc-grid" style="margin-top: 0.8rem;">
+<a href="posts/02-08_enterprise_value/" class="toc-card">
+<span class="toc-card-num">読む順 1</span>
+<span class="toc-card-title">2-8 EVで見る「会社の値段」</span>
+<span class="toc-card-desc">時価総額に借金を足し、13社を簡易DCFで検証</span>
+</a>
+<a href="posts/02-03_accrual_analysis/" class="toc-card">
+<span class="toc-card-num">読む順 2</span>
+<span class="toc-card-title">2-3 アクルーアル分析</span>
+<span class="toc-card-desc">ＥＮＥＯＳの最高益に「現金の裏付け」はあるか</span>
+</a>
+<a href="posts/02-06_segment_core_stocks/" class="toc-card">
+<span class="toc-card-num">読む順 3</span>
+<span class="toc-card-title">2-6 コングロマリット・ディスカウント</span>
+<span class="toc-card-desc">総合商社・ＥＮＥＯＳ をセグメントで読み解く</span>
+</a>
+<a href="posts/02-07_narrative_car/" class="toc-card">
+<span class="toc-card-num">読む順 4</span>
+<span class="toc-card-title">2-7 CARで見る「決算の効き」</span>
+<span class="toc-card-desc">主要5社の個別決算の効きをCARで検証</span>
+</a>
+<a href="posts/01-03_xbrl_to_json/" class="toc-card">
+<span class="toc-card-num">読む順 5</span>
+<span class="toc-card-title">1-3 決算 XBRL を JSON に変換</span>
+<span class="toc-card-desc">自分で再現するなら ― データの作り方から</span>
+</a>
+</div>
+
+## 目次
+
+<p class="toc-phase-label"><i class="fa-solid fa-layer-group"></i> 無料データを取得編</p>
+<div class="toc-grid">
+<a href="posts/01-01_get_stock_prices/" class="toc-card">
+<span class="toc-card-num">1-1</span>
+<span class="toc-card-title">まず、「株価」を取得する</span>
+<span class="toc-card-desc">yfinance から parquet 保存、自作アプリまで</span>
+</a>
+<a href="posts/01-02_collect_other_data/" class="toc-card">
+<span class="toc-card-num">1-2</span>
+<span class="toc-card-title">決算データを無料で集める</span>
+<span class="toc-card-desc">EDINET・TDnet の公式 XBRL を活用</span>
+</a>
+<a href="posts/01-03_xbrl_to_json/" class="toc-card">
+<span class="toc-card-num">1-3</span>
+<span class="toc-card-title">決算 XBRL を JSON に変換</span>
+<span class="toc-card-desc">「決算そのもの」を分析、元売3社を比較</span>
+</a>
+<a href="posts/EX-03_data_hub/" class="toc-card">
+<span class="toc-card-num">番外編</span>
+<span class="toc-card-title">データ取得を「押すだけ」に</span>
+<span class="toc-card-desc">取得ツールの紹介と、Claudeに作ってもらうプロンプト</span>
+</a>
+</div>
+<p class="toc-phase-label"><i class="fa-solid fa-layer-group"></i> 決算データで分析編</p>
+<div class="toc-grid">
+<a href="posts/02-01_garp_peg_roe/" class="toc-card">
+<span class="toc-card-num">2-1</span>
+<span class="toc-card-title">4象限で GARP を見る</span>
+<span class="toc-card-desc">「成長と割安の両立」銘柄を探す</span>
+</a>
+<a href="posts/02-02_multifactor_scoreboard/" class="toc-card">
+<span class="toc-card-num">2-2</span>
+<span class="toc-card-title">マルチファクタースコア</span>
+<span class="toc-card-desc">7軸で「全方位の優等生」を探す</span>
+</a>
+<a href="posts/02-03_accrual_analysis/" class="toc-card">
+<span class="toc-card-num">2-3</span>
+<span class="toc-card-title">アクルーアル分析</span>
+<span class="toc-card-desc">ＥＮＥＯＳの最高益に「現金の裏付け」はあるか</span>
+</a>
+<a href="posts/02-04_triangulation/" class="toc-card">
+<span class="toc-card-num">2-4</span>
+<span class="toc-card-title">コンセンサス予想を検証</span>
+<span class="toc-card-desc">会社予想とのズレから「修正の向き」を読む</span>
+</a>
+<a href="posts/02-05_segment_analysis/" class="toc-card">
+<span class="toc-card-num">2-5</span>
+<span class="toc-card-title">セグメント分析</span>
+<span class="toc-card-desc">連結に埋もれた「強い事業」を発進力スコアで探す</span>
+</a>
+<a href="posts/02-06_segment_core_stocks/" class="toc-card">
+<span class="toc-card-num">2-6</span>
+<span class="toc-card-title">コングロマリット・ディスカウント</span>
+<span class="toc-card-desc">総合商社・ＥＮＥＯＳをセグメントで読み解く</span>
+</a>
+<a href="posts/02-07_narrative_car/" class="toc-card">
+<span class="toc-card-num">2-7</span>
+<span class="toc-card-title">CARで見る「決算の効き」</span>
+<span class="toc-card-desc">元売・商社 主要5社の市場反応を検証</span>
+</a>
+<a href="posts/02-08_enterprise_value/" class="toc-card">
+<span class="toc-card-num">2-8</span>
+<span class="toc-card-title">EVで見る「会社の値段」</span>
+<span class="toc-card-desc">時価総額に借金を足し、13社を簡易DCFで検証</span>
+</a>
+</div>
+
+<p class="toc-phase-label"><i class="fa-solid fa-layer-group"></i> 機械学習チャレンジ編</p>
+<div class="toc-grid">
+<a href="posts/03-01_similar_earnings_search/" class="toc-card">
+<span class="toc-card-num">3-1</span>
+<span class="toc-card-title">コサイン類似度</span>
+<span class="toc-card-desc">「似ている決算」を数値で検索する</span>
+</a>
+<a href="posts/03-02_knn_prediction/" class="toc-card">
+<span class="toc-card-num">3-2</span>
+<span class="toc-card-title">K-NN 分類</span>
+<span class="toc-card-desc">似た決算群から外れた「個別ショック」を検出</span>
+</a>
+<a href="posts/03-03_earnings_clustering/" class="toc-card">
+<span class="toc-card-num">3-3</span>
+<span class="toc-card-title">K-means クラスタリング</span>
+<span class="toc-card-desc">教師なし学習が分けた「決算の型」</span>
+</a>
+<a href="posts/03-04_random_forest/" class="toc-card">
+<span class="toc-card-num">3-4</span>
+<span class="toc-card-title">ランダムフォレスト</span>
+<span class="toc-card-desc">予測は失敗、「特徴量重要度」の落とし穴を学ぶ</span>
+</a>
+<a href="posts/03-05_price_clustering/" class="toc-card">
+<span class="toc-card-num">3-5</span>
+<span class="toc-card-title">階層型クラスタリング</span>
+<span class="toc-card-desc">値動きの相関で再現する業界地図</span>
+</a>
+<a href="posts/03-06_price_anomaly/" class="toc-card">
+<span class="toc-card-num">3-6</span>
+<span class="toc-card-title">PCA 異常検知</span>
+<span class="toc-card-desc">値動きの「共動の崩れ」で突発材料を検出</span>
+</a>
+</div>
+
+<p class="toc-phase-label"><i class="fa-solid fa-layer-group"></i> 用語集</p>
+<div class="toc-grid">
+<a href="glossary/" class="toc-card">
+<span class="toc-card-num">用語集</span>
+<span class="toc-card-title">50音順用語集</span>
+<span class="toc-card-desc">財務・会計・機械学習・データの用語集</span>
+</a>
+</div>
+
+<div class="md-footer-note" style="margin-top: 3rem;">
+  <div class="md-footer-note__section">
+    <p class="md-footer-note__heading">データの取り扱いについて</p>
+    <ul>
+      <li>本アプリは個人利用および学習を目的としたツールであり、投資勧誘を目的としたものではありません。</li>
+      <li>yfinance ライブラリを使用しています。利用にあたっては、Yahoo! 規約を遵守してください。</li>
+      <li>短時間での大量取得はサーバーに負担がかかります。API のレート制限を守り、過度なリクエストは避けてください。</li>
+    </ul>
+  </div>
+  <div class="md-footer-note__section">
+    <p class="md-footer-note__heading">⚠️ 免責事項</p>
+    <ul>
+      <li><strong>データの正確性</strong>: 取得データは正確性や即時性を保証しません。</li>
+      <li><strong>損害への責任</strong>: 本ツールの利用により生じたいかなる損害についても、制作者は一切の責任を負いません。</li>
+    </ul>
+  </div>
+</div>
