@@ -10,11 +10,11 @@ twitter_card: summary_large_image
 
 ![マルチファクタースコアボード](img/02-02_multifactor_scoreboard/00_thumbnail.png){width="1280"}
 
-「PER が低いから買い」「ROE が高いから買い」 ― 単一指標だけのスクリーニングは、**思わぬ罠**にはまりがちです。
+「ＰＥＲが低いから買い」「ＲＯＥが高いから買い」 ― 単一指標だけのスクリーニングは、**思わぬ罠**にはまりがちです。
 
-本記事では、**Value / Quality / Growth / Consensus / Sentiment / Momentum / Risk** という 7 ファクターでマルチな評価を行っていきます。割安・高 ROE で評価が高いのに株価は下落、評価が劣るのに上昇 ― そんな **ファンダ評価と株価の逆転現象** を、ファンダ・需給・モメンタムを横並びにして定量的に読み解きます。
+本記事では、**Value / Quality / Growth / Consensus / Sentiment / Momentum / Risk** という 7 ファクターでマルチな評価を行っていきます。割安・高ＲＯＥで評価が高いのに株価は下落、評価が劣るのに上昇 ― そんな **ファンダ評価と株価の逆転現象** を、ファンダ・需給・モメンタムを横並びにして定量的に読み解きます。
 
-<p class="fig-meta">データ出典<br><i class="fa-solid fa-caret-right"></i>証券会社のアプリ：13指標（EPS / BPS / 配当金 / EV/EBITDA / ROE / ROA / 営業利益率 / 自己資本比率 / 売上高変化率 / 経常利益変化率 / 業績予想修正率(予想) / 経常利益変化率(予想) / 過去3年平均売上高成長率(予想)）<br><i class="fa-solid fa-caret-right"></i>yfinance：日足 Close / Volume（2026年5月31日取得）</p>
+<p class="fig-meta">データ出典<br><i class="fa-solid fa-caret-right"></i>証券会社のアプリ：13指標（ＥＰＳ / ＢＰＳ / 配当金 / ＥＶ/EBITDA / ＲＯＥ / ＲＯＡ / 営業利益率 / 自己資本比率 / 売上高変化率 / 経常利益変化率 / 業績予想修正率(予想) / 経常利益変化率(予想) / 過去3年平均売上高成長率(予想)）<br><i class="fa-solid fa-caret-right"></i>yfinance：日足 Close / Volume（2026年5月31日取得）</p>
 
 <div class="ref-quiet">
 <a class="ref-card ref-card--quiet" href="https://www.ifinance.ne.jp/glossary/investment/inv312.html" target="_blank" rel="noopener">
@@ -34,12 +34,12 @@ Fama-French、Carhart、Q-factor など機関投資家のクオンツモデル�
 
 | ファクター | 観点 | 主要指標 |
 |---|---|---|
-| **Value** | 割安度 | PER / PBR / EV/EBITDA / 配当利回り |
-| **Quality** | 収益性・財務健全性 | ROE / ROA / 営業利益率 / 自己資本比率 |
+| **Value** | 割安度 | ＰＥＲ / ＰＢＲ / ＥＶ/EBITDA / 配当利回り |
+| **Quality** | 収益性・財務健全性 | ＲＯＥ / ＲＯＡ / 営業利益率 / 自己資本比率 |
 | **Growth** | 過去の成長実績 | 売上高変化率 / 経常利益変化率 |
 | **Consensus** | 将来予想の改善度 | 業績予想修正率 / 経常利益変化率(予想) / 3年売上成長率(予想) |
 | **Sentiment** | 需給の熱量 | 出来高増加率 / 売買代金増加率 |
-| **Momentum** | 株価のトレンド | 値上り率 / 52週安値からの上昇率 / MA乖離率 |
+| **Momentum** | 株価のトレンド | 値上り率 / 52週安値からの上昇率 / ＭＡ乖離率 |
 | **Risk** | リスク要素（低いほど良い） | 60日ボラティリティ / β（対日経平均） |
 
 **全ファクターが平均以上**の銘柄はオールラウンダー（コア候補）、**一つだけ突出して低い**銘柄はその要因で敬遠する判断材料になる ― これがマルチファクター採点の利点です。
@@ -58,14 +58,14 @@ Fama-French、Carhart、Q-factor など機関投資家のクオンツモデル�
 ![主要6社レーダー](img/02-02_multifactor_scoreboard/04_majors_radar.png){width="1200"}
 
 - キーエンスは Quality 一点突出の「典型的な高品質・割高銘柄」 ― 形が右上に偏る
-- ソフトバンクＧ は Risk 軸だけ極端に凹んだ「高リターン高リスク型」
+- ソフトバンクＧは Risk 軸だけ極端に凹んだ「高リターン高リスク型」
 - ＫＤＤＩ・トヨタは全方位バランス型
 
 | 銘柄 | 総合 | 形状の特徴 |
 |---|---|---|
 | **ソフトバンクＧ** | 54 | Momentum 99 / Sentiment 92 / Growth 83 と需給・業績が最強。Risk **0** ＝ ほぼ最高ボラティリティが唯一の弱点 |
-| **三菱ＵＦＪ** | 53 | Momentum 73 / Sentiment 81 が強く、最近の銀行株上昇を反映。一方 Quality 32（銀行は ROE が構造的に低い） |
-| **キーエンス** | 55.7 | Quality **92**（高 ROE で別格）だが Value 6（PER が市場上位 6% = 割高） |
+| **三菱ＵＦＪ** | 53 | Momentum 73 / Sentiment 81 が強く、最近の銀行株上昇を反映。一方 Quality 32（銀行はＲＯＥが構造的に低い） |
+| **キーエンス** | 55.7 | Quality **92**（高ＲＯＥで別格）だが Value 6（ＰＥＲが市場上位 6% = 割高） |
 | **ＫＤＤＩ** | 56 | バランス型。Risk 69（低ボラ）で長期保有向き |
 | **トヨタ** | 48 | 全ファクターが 34〜70 で突出した強みなし。Sentiment 12 / Momentum 42 から直近モメンタム弱め |
 | **ソニーＧ** | 44 | Sentiment 23 / Momentum 42 と需給・モメンタムが低迷。Growth 18 で過去の成長実績も振るわない |
@@ -76,7 +76,7 @@ Fama-French、Carhart、Q-factor など機関投資家のクオンツモデル�
 
 ## 大型100銘柄の「全体序列」
 
-レーダーが「個別銘柄の性格」を見るのに対し、**ヒートマップは「全体序列」を見るツール**です。TOPIX 大型 100 銘柄内の総合スコア Top 20 を 7 ファクター別に色分けすると、どのファクターで稼いでいるかが一目で分かります。
+レーダーが「個別銘柄の性格」を見るのに対し、**ヒートマップは「全体序列」を見るツール**です。ＴＯＰＩＸ大型 100 銘柄内の総合スコア Top 20 を 7 ファクター別に色分けすると、どのファクターで稼いでいるかが一目で分かります。
 
 <p class="fig-meta"><i class="fa-solid fa-expand"></i> クリックで拡大</p>
 <p class="fig-meta">使用データ<br><i class="fa-solid fa-caret-right"></i>証券会社のアプリ：13指標（2026年3月期本決算＋翌期会社予想ベース）<br><i class="fa-solid fa-caret-right"></i>yfinance：日足 Close / Volume（2026年5月31日取得）</p>
@@ -84,7 +84,7 @@ Fama-French、Carhart、Q-factor など機関投資家のクオンツモデル�
 ![スコアボード Top20](img/02-02_multifactor_scoreboard/01_scoreboard_top20.png){width="1200"}
 
 - ディフェンシブ（ＪＴ・アステラス製薬）と需給・業績の強い銘柄（ＳＯＭＰＯＨＤ・ソフトバンク）が混在
-- 業種最大手（ＥＮＥＯＳ など）でも総合 50 で Top 20 圏外 ― 業種大手とマルチファクター評価は別物
+- 業種最大手（ＥＮＥＯＳなど）でも総合 50 で Top 20 圏外 ― 業種大手とマルチファクター評価は別物
 - 見るべきは総合スコアの高さより **どのファクターで稼いでいるか** ― ディフェンシブ型・需給型・業績型はリスクの性格が違う
 
 
@@ -128,7 +128,7 @@ Fama-French、Carhart、Q-factor など機関投資家のクオンツモデル�
 
 ## <i class="fa-solid fa-chart-line"></i> 公開サイトで試す
 
-7軸のうち、ROE・利益率・自己資本比率といった**財務の軸**は、有価証券報告書の数値で、公開サイトでも並べて見られます。株価やモメンタムなど、価格に基づく軸は含みません。有報ベースなので、記事の数値とは、期や定義が異なる場合があります。
+7軸のうち、ＲＯＥ・利益率・自己資本比率といった**財務の軸**は、有価証券報告書の数値で、公開サイトでも並べて見られます。株価やモメンタムなど、価格に基づく軸は含みません。有報ベースなので、記事の数値とは、期や定義が異なる場合があります。
 
 <div class="repo-link-wrap">
 <a class="repo-link" href="https://minnanosaiban.github.io/company-analysis/#/compare?cc=E24050,E01084,E31632" target="_blank" rel="noopener">
